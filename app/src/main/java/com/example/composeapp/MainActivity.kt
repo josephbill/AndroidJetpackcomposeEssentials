@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -27,11 +28,18 @@ class MainActivity : ComponentActivity() {
         // render out views.
         setContent {
             // invoke/call my composable unit
-            Column {
-                greeting()
-                greeting2()
-            }
+//            Column {
+//                greeting()
+//                greeting2()
+//            }
 
+            // main compose function for my recipe app.
+            Column{
+                TopAppBar(title = {
+                    Text("My Recipes")
+                })
+                RecipeList(recipes = defaultRecipes)
+            }
         }
     }
 
